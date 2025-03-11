@@ -1,0 +1,83 @@
+/* General page styling */
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Login box */
+.container-login form {
+  background-color: white;
+  padding: 20px;
+  width: 360px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Title */
+h2 {
+  font-size: 24px;
+  color: #1877f2;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-login-1 {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: white; /* Ensure background is the same */
+  color: black; /* Ensure text color is the same */
+  appearance: none; /* Removes browser-specific styles */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+}
+
+
+/* Buttons */
+.button-login {
+  width: 80%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Login button (Blue, like FB) */
+.button-login[type="submit"] {
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+}
+
+.button-login[type="submit"]:hover {
+  background-color: #165db6;
+}
+
+/* Cancel button */
+.button-login[type="button"] {
+  background-color: #e4e6eb;
+  color: black;
+  font-weight: bold;
+}
+
+.button-login[type="button"]:hover {
+  background-color: #d8dadf;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .container-login form {
+    width: 120%;
+  }
+}

@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef5f7;
+    text-align: center;
+    margin-top: 200px;
+  }
+  
+  /* Parent Container */
+  .main-parent-cont {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(102, 133, 165);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  
+  /* Header */
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Input Field */
+  .input-parent-style {
+    width: 250px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  /* Buttons */
+  .button-parent-style,
+  .logout-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .button-parent-style:hover,
+  .logout-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  /* Make the td background uniform and aesthetic */
+  td {
+    background-color: #f4f7fc; /* Light grayish blue for a soft look */
+    color: #333; /* Dark text for contrast */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  td:hover {
+    background-color: #e1efff; /* Light blue on hover for a smooth effect */
+  }
+  
+  /* Table Header Styles */
+  th {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  

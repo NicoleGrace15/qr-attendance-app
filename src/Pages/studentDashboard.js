@@ -404,23 +404,25 @@ const handleUploadExcuse = async () => {
 
       
       {editMode && (
-  <div className="edit-profile">
+  <div className="edit-profilecont">
     <h3 className="loapans">Edit Profile</h3>
-    <label>First Name: <input type="text" value={updatedProfile.firstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, firstName: e.target.value })} /></label>
-    <label>Middle Name: <input type="text" value={updatedProfile.middleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, middleName: e.target.value })} /></label>
-    <label>Last Name: <inpuat type="text" value={updatedProfile.lastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, lastName: e.target.value })} /></label>
-    <label>Grade Level: <input type="text" value={updatedProfile.gradeLevel} onChange={(e) => setUpdatedProfile({ ...updatedProfile, gradeLevel: e.target.value })} /></label>
-    <label>Section: <input type="text" value={updatedProfile.section} onChange={(e) => setUpdatedProfile({ ...updatedProfile, section: e.target.value })} /></label>
+    <label>First Name: <input className="inputnamesstud"type="text" value={updatedProfile.firstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, firstName: e.target.value })} /></label>
+    <label>Middle Name: <input className="inputnamesstud"type="text" value={updatedProfile.middleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, middleName: e.target.value })} /></label>
+    <label>Last Name: <input className="inputnamesstud"type="text" value={updatedProfile.lastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, lastName: e.target.value })} /></label>
+    <label>Grade Level: <input  type="text" value={updatedProfile.gradeLevel} onChange={(e) => setUpdatedProfile({ ...updatedProfile, gradeLevel: e.target.value })} /></label>
+    <label>Section: <input className="inputnamesstud" type="text" value={updatedProfile.section} onChange={(e) => setUpdatedProfile({ ...updatedProfile, section: e.target.value })} /></label>
     <h4 className="mnsdsa">Father's Information</h4>
-    <label>First Name: <input type="text" value={updatedProfile.fatherFirstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherFirstName: e.target.value })} /></label>
-    <label>Middle Name: <input type="text" value={updatedProfile.fatherMiddleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherMiddleName: e.target.value })} /></label>
-    <label>Last Name: <input type="text" value={updatedProfile.fatherLastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherLastName: e.target.value })} /></label>
+    <label>First Name: <input className="inputnamesstud" type="text" value={updatedProfile.fatherFirstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherFirstName: e.target.value })} /></label>
+    <label>Middle Name: <input className="inputnamesstud" type="text" value={updatedProfile.fatherMiddleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherMiddleName: e.target.value })} /></label>
+    <label>Last Name: <input className="inputnamesstud" type="text" value={updatedProfile.fatherLastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherLastName: e.target.value })} /></label>
     <h4 className="mnsdsa">Mother's Information</h4>
-    <label>First Name: <input type="text" value={updatedProfile.motherFirstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherFirstName: e.target.value })} /></label>
-    <label>Middle Name: <input type="text" value={updatedProfile.motherMiddleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherMiddleName: e.target.value })} /></label>
-    <label>Last Name: <input type="text" value={updatedProfile.motherLastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherLastName: e.target.value })} /></label>
+    <label>First Name: <input className="inputnamesstud" type="text" value={updatedProfile.motherFirstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherFirstName: e.target.value })} /></label>
+    <label>Middle Name: <input className="inputnamesstud" type="text" value={updatedProfile.motherMiddleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherMiddleName: e.target.value })} /></label>
+    <label>Last Name: <input className="inputnamesstud" type="text" value={updatedProfile.motherLastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherLastName: e.target.value })} /></label>
+    <div className="edit-buttonnn">
     <button className="asawqzs"onClick={handleProfileUpdate}>Save Changes</button>
     <button className="asawqzs" onClick={() => setEditMode(false)}>Cancel</button>
+  </div>
   </div>
 )}
 
@@ -428,7 +430,7 @@ const handleUploadExcuse = async () => {
   <div className="change-password-modal">
     <h3 className="loapans">Change Password</h3>
     <label>Old Password:</label>
-    <input
+    <input className="wepass"
       type="password"
       value={oldPassword}
       onChange={(e) => setOldPassword(e.target.value)}
@@ -471,19 +473,19 @@ const handleUploadExcuse = async () => {
 
 
 
-{isAppealOpen && (
+    {isAppealOpen && (
   <div className="appeal-modal">
     <h3 className="loapans">Submit Attendance Appeal</h3>
-    <textarea
+    <textarea className="textappeal"
       rows="4"
       placeholder="Explain why your attendance record is incorrect..."
       value={appealMessage}
       onChange={(e) => setAppealMessage(e.target.value)}
     />
     <div className="Appeal-buttons">
-    <button onClick={handleAppealSubmit}>Submit</button>
-    <button onClick={() => setIsAppealOpen(false)}>Cancel</button>
-  </div>
+      <button onClick={handleAppealSubmit}>Submit</button>
+      <button onClick={() => setIsAppealOpen(false)}>Cancel</button>
+    </div>
   </div>
 )}
 

@@ -1,186 +1,380 @@
-/* Main Container with Scrollable Content */
-.mainhsvdaygvd {
+
+
+/* 🟦 Dark Blue Header */
+.welcms {
+  background: #0a3d62;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1.8rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🟦 Separate Menu Container */
+.menucontainerss {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  width: 250px;
+}
+
+.menucontainerss button {
+  background: #0a3d62;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.menucontainerss button:hover {
+  background: #1e5d8a;
+}
+
+/* 🟦 Dropdown Menu */
+.menudada {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  background-color: #1907617d;
-  font-family: 'Arial', sans-serif;
-  max-height: 100vh;  /* Limiting height to 80% of the viewport */
-  width: 850px;
-  overflow-y: auto;  /* Enable vertical scroll when content overflows */
-  justify-content: center;  /* Vertically center content */
-  align-items: center;  /* Horizontally center content */
-  text-align: center;  /* Ensures text within content is centered */
-  margin: 0%;
-}
-
-
-/* Header */
-.welcms {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Profile Section */
-.edit-profile {
-  background-color: #ffffff;
+  background: white;
+  padding: 10px;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  max-height: 400px; /* Max height for profile section */
-  overflow-y: auto; /* Allow scroll if content exceeds the max height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.edit-profile h3, .loapans {
+.menubasvdyg {
+  background: #0a3d62;
+  color: white;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.menubasvdyg:hover {
+  background: #1e5d8a;
+}
+
+/* 🟦 Pop-Up Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+
+/* 🟦 Input Fields Styling */
+.inputnamesstud {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: 2px solid #0a3d62;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f8f9fa;
+  display: block;
+}
+
+.inputnamesstud:focus {
+  outline: none;
+  border-color: #1e5d8a; /* Lighter blue when focused */
+  box-shadow: 0 0 5px rgba(30, 93, 138, 0.5);
+}
+.modal h3 {
+  margin-bottom: 10px;
+  color: #0a3d62;
+}
+
+.modal input, .modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: #0a3d62;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: #d9534f;
+  color: white;
+}
+
+/* 🟦 Appeal Modal */
+.appeal-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+.loapans {
   font-size: 20px;
-  font-weight: 500;
+  color: #0a3d62; /* Dark Blue */
   margin-bottom: 15px;
 }
 
-.edit-profile label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.edit-profile input {
+.textappeal {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 4px;
+  height: 100px;
   border: 1px solid #ccc;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-.edit-profile button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.edit-profile button:hover {
-  background-color: #45a049;
-}
-
-/* Menu */
-button.menubasvdyg {
-  width: 100%;
-  padding: 12px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  text-align: left;
-  margin-bottom: 10px;
-}
-.menudada {
-  width: 200px;  /* Set width for the menu */
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  height: 100%;  /* Full height of the viewport */
- 
-}
-
-button.menubasvdyg:hover {
-  background-color: #0056b3;
-}
-
-button.asawqzs {
-  background-color: #ff4d4d;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  margin: 10px 0;
-}
-
-button.asawqzs:hover {
-  background-color: #ff1a1a;
-}
-
-/* Modal */
-.change-password-modal,
-.qqqq,
-.appeal-modal {
-  background-color: #ffffff;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-height: 70vh; /* Limit modal height */
-  overflow-y: auto; /* Allow scroll if content overflows */
-}
-
-.change-password-modal h3,
-.qqqq h3,
-.appeal-modal h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.change-password-modal input,
-.qqqq input,
-.appeal-modal textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   font-size: 14px;
-  box-sizing: border-box;
+  resize: none;
+
 }
 
-.change-password-modal button,
-.qqqq button,
-.appeal-modal button {
-  background-color: #007bff;
+.Appeal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.Appeal-buttons button {
+  background: #0a3d62; /* Dark Blue */
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
   border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
+  transition: 0.3s;
 }
 
-.change-password-modal button:hover,
-.qqqq button:hover,
-.appeal-modal button:hover {
-  background-color: #0056b3;
+.Appeal-buttons button:hover {
+  background: #1e5d8a; /* Lighter Blue */
 }
 
-/* Table */
-table.losdnan {
+/* 🟦 Tables - Solid Color (No Zebra Stripes) */
+.losdnan {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-height: 300px; /* Limit table height */
-  overflow-y: auto; /* Enable vertical scrolling within the table */
+  background: #0a3d62; /* Dark Blue */
+  color: white; /* White text for readability */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-table.losdnan th, table.losdnan td {
+.losdnan th, 
+.losdnan td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #1e5d8a; /* Lighter Blue Borders */
 }
 
-table.losdnan th {
-  background-color: #f2f2f2;
+.losdnan thead {
+  background: #172554; /* Even Darker Blue */
+  color: white;
 }
 
-table.losdnan tr:hover {
-  background-color: #f1f1f1;
+.wqwqwq {
+  color: white; /* Ensures table text stays white */
+}
+
+
+/* 🟦 Main Container with Scrollbar */
+.mainhsvdaygvd {
+  background: #f4f6f900;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 100vh; /* Ensures content doesn't overflow screen */
+}
+
+/* 🟦 Edit Profile Container */
+.edit-profilecont {
+  background-color: rgba(12, 21, 66, 0.85); /* Background preserved */
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 80vh; /* Prevents content from going off-screen */
+  position: relative;
+  margin: 20px auto; /* Centers horizontally */
+  padding: 20px;
+  text-align: center; /* Centers inline content like text */
+  align-items: center;
+}
+.change-password-modal {
+  background-color: rgba(12, 21, 66, 0.85); /* Background preserved */
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 80vh; /* Prevents content from going off-screen */
+  position: relative;
+  margin: 20px auto; /* Centers horizontally */
+  padding: 20px;
+  text-align: center; /* Centers inline content like text */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically (if needed) */
+  flex-direction: column;
+}
+
+.edit-buttonnn{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* 🟦 Edit Profile Heading */
+.loapans {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px; /* Adjusted spacing */
+  text-align: center;
+}
+
+/* 🟦 Section Titles (Father & Mother Info) */
+.mnsdsa {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* 🟦 Input Field Container */
+.label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🟦 Input Fields */
+/* 🟦 Input Fields */
+.inputnamesstud {
+  width: 100%;
+  max-width: 650px;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+.inputnamesstud:focus {
+  outline: none;
+  border-color: #1e5d8a;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 🟦 Labels */
+label {
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* 🟦 Buttons */
+.asawqzs {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #0a3d62;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.asawqzs:hover {
+  background: #1e5d8a;
+}
+
+/* 🟦 Scrollbar Styling */
+.mainhsvdaygvd::-webkit-scrollbar,
+.edit-profilecont::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainhsvdaygvd::-webkit-scrollbar-thumb,
+.edit-profilecont::-webkit-scrollbar-thumb {
+  background: #1e5d8a;
+  border-radius: 4px;
+}
+
+.mainhsvdaygvd::-webkit-scrollbar-track,
+.edit-profilecont::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .edit-profilecont {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .inputnamesstud {
+    width: 100%;
+  }
+}
+
+.edit-profilecont label {
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns label text to the left */
+  margin-bottom: 10px;
+  color: white; /* Ensures label text is visible */
 }

@@ -1,83 +1,81 @@
-/* ClassList.css */
+/* Container */
 .container-class-box {
-  padding: 1.5rem;
-  background-color: #f8fafc; /* Light gray background */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 300px;
+  background-color: #f8faff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: fit-content;
 }
 
-.title {
-  font-size: 2rem;
+/* Title */
+.title-class11 {
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 1.2rem;
-  color: #1e3a8a; /* Dark blue */
+  color: #0a3d62;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.back-button {
-  background-color: #3b82f6; /* Blue */
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  transition: background 0.3s ease, transform 0.2s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.back-button:hover {
-  background-color: #2563eb; /* Darker blue */
-  transform: scale(1.05);
-}
-
+/* Section Titles */
 .section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1e293b; /* Dark grayish blue */
-  text-align: center; /* Centering "Boys" and "Girls" */
-  margin: 1.5rem 0 0.8rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1b4f72;
+  margin-bottom: 10px;
 }
 
+/* Tables */
 .table-container {
-  width: 100%;
-  max-width: 800px;
   overflow-x: auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  width: 950px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
+  background: #1b4f72; /* Dark blue background */
+  border-radius: 8px;
   overflow: hidden;
 }
 
-thead {
-  background-color: #3b82f6; /* Blue */
+/* Table Headers */
+.qwee {
+  background-color: #0a3d62;
   color: white;
-  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #083358;
 }
 
-th,
-td {
+/* Table Data */
+.tdwe {
   padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #4a69bd;
+  color: white; /* Names and text inside columns are now white */
+  font-size: 16px;
 }
 
-tbody tr:hover {
-  background-color: #f1f5f9; /* Lighter gray for hover */
-  transition: background-color 0.3s ease;
+/* Excuse Button */
+.excuse-btn {
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.no-data {
-  text-align: center;
-  padding: 1rem;
-  color: #64748b; /* Neutral gray */
+.excuse-btn:hover {
+  background-color: #083358;
+  width: auto;
+}
+
+/* Ensure the Excuse text is displayed properly */
+.tdwe span.excused-text {
+  color: #f39c12;
+  font-weight: bold;
+  font-size: 14px;
 }

@@ -107,7 +107,7 @@ const AddSchedule = () => {
     return (
       <div className="AddSchedule">
         <div className= "addsubject"> 
-        <h2 className="text-xl font-bold mb-4">📅 Add Schedule</h2>
+        <h2 className="addschedwew">📅 Add Schedule</h2>
         </div>
         <div className="bg-gray-100 p-4 rounded-md mb-4">
           <input type="text" placeholder="Subject Name" value={subject} onChange={(e) => setSubject(e.target.value)}
@@ -139,10 +139,10 @@ const AddSchedule = () => {
         {/* Schedule Table */}
         {["MWF", "T/TH"].map((type) => (
     <div key={type}>
-      <h3 className="text-lg font-bold mt-4">📅 {type} Schedule</h3>
-      <table className="w-full border-collapse border border-gray-400">
+      <h3 className="babababa">📅 {type} Schedule</h3>
+      <table className="amazing">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="eee">
             <th className="border p-2">Subject</th>
             <th className="border p-2">Time</th>
             <th className="border p-2">Teacher</th>

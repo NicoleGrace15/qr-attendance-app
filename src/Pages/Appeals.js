@@ -110,7 +110,7 @@ const AppealList = () => {
   };
   
   return (
-    <div className="appeal-4">
+    <div className="appeal-4sdawd">
       <h2 className="h2-appeal">📋 Appeal List</h2>
      
       {loading ? (
@@ -120,7 +120,7 @@ const AppealList = () => {
       ) : (
         <table className="appeal-table">
       
-          <h3>📌 Unreviewed Appeals</h3>
+          <h3 className="fafafaqwe">📌 Unreviewed Appeals</h3>
 <table className="appeal-table">
   <thead>
     <tr className="appeal-row">
@@ -135,25 +135,27 @@ const AppealList = () => {
     {appeals.filter(a => !a.reviewed).length > 0 ? (
       appeals.filter(a => !a.reviewed).map((appeal) => (
         <tr key={appeal.id}>
-          <td>{appeal.studentName}</td>
-          <td>{appeal.message}</td>
-          <td>{appeal.timestamp.toLocaleDateString()}</td>
-          <td>{appeal.timestamp.toLocaleTimeString()}</td>
-          <td>
-            <button onClick={() => handlePrint(appeal)}>🖨 Print</button>
-            <button onClick={() => markAsReviewed(appeal.id)}>✅ Done Review</button>
+          <td className="sjdnakwdb">{appeal.studentName}</td>
+          <td className="sjdnakwdb">{appeal.message}</td>
+          <td className="sjdnakwdb">{appeal.timestamp.toLocaleDateString()}</td>
+          <td className="sjdnakwdb">{appeal.timestamp.toLocaleTimeString()}</td>
+          <td className="sjdnakwdb">
+            <div className="posdkan-container">
+            <button className="posdkan"onClick={() => handlePrint(appeal)}>🖨 Print</button>
+            <button className="posdkan" onClick={() => markAsReviewed(appeal.id)}>✅ Done Review</button>
+            </div>
           </td>
         </tr>
       ))
     ) : (
       <tr>
-        <td colSpan="5" className="text-center border p-2">No unreviewed appeals</td>
+        <td colSpan="5"  className="sjdnakwdb">No unreviewed appeals</td>
       </tr>
     )}
   </tbody>
 </table>
 
-<h3>📂 Archived Appeals</h3>
+<h3 className="fafafaqwe">📂 Archived Appeals</h3>
 <table className="appeal-table">
   <thead>
     <tr className="appeal-row">
@@ -167,10 +169,10 @@ const AppealList = () => {
     {appeals.filter(a => a.reviewed).length > 0 ? (
       appeals.filter(a => a.reviewed).map((appeal) => (
         <tr key={appeal.id}>
-          <td>{appeal.studentName}</td>
-          <td>{appeal.message}</td>
-          <td>{appeal.timestamp.toLocaleDateString()}</td>
-          <td>{appeal.timestamp.toLocaleTimeString()}</td>
+         <td className="sjdnakwdb">{appeal.studentName}</td>
+         <td className="sjdnakwdb">{appeal.message}</td>
+         <td className="sjdnakwdb">{appeal.timestamp.toLocaleDateString()}</td>
+         <td className="sjdnakwdb">{appeal.timestamp.toLocaleTimeString()}</td>
         </tr>
       ))
     ) : (

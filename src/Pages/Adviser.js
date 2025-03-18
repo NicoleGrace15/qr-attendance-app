@@ -31,52 +31,45 @@ const Adviser = () => {
 
 
   return (
-    <div className="flex h-screen">
-        
-          <div className="w-1/5 bg-blue-900 text-white p-4 min-h-screen">
-          <h1>Welcome, Teacher {adviserName}</h1>
-            <div className="sidebar">
-            <button className="w-full bg-white text-blue-900 font-bold p-2 my-1 rounded" onClick={() => setView("classlist")}>
-              📋 Class List
-            </button>
-            <button className="w-full bg-white text-blue-900 font-bold p-2 my-1 rounded" onClick={() => setView("attendance-log")}>
-               📊 Attendance Log
-            </button>
-            <button className="w-full bg-white text-blue-900 font-bold p-2 my-1 rounded" onClick={() => setView("excuse-letter")}>
-              📄 Excuse Letters
-            </button>
-            <button className="w-full bg-red-600 text-white font-bold p-2 my-1 rounded mt-4" onClick={() => auth.signOut().then(() => navigate("/login"))}>
-              🚪 Log Out
-            </button>
-          </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="content">
-            <div className="Display-container-adviser">
-            {view === "classlist" && <ClassList />}
-            </div>
-            <div className="Display-container-adviser">
-            {view === "excuse-letter" && <ExcuseLetterList />}
-            </div>
-            <div className="Display-container-adviser">
-            {view === "attendance-log" && <AttendanceLogs />}
-            </div>
-            
-
-      
-
-          </div>
-     
+    <div className="adviser-container"> {/* Root Container */}
+      <div>
+        <h1 className="h1-adviser-title">Welcome, Teacher {adviserName}</h1>
+      </div>
+      {/* Sidebar Section */}
+      <div className="sidebar">
+        <button
+          className="sidebar-btn"
+          onClick={() => setView("classlist")}
+        >
+          📋 Class List
+        </button>
+        <button
+          className="sidebar-btn"
+          onClick={() => setView("excuse-letter")}
+        >
+          📄 Excuse Letters
+        </button>
+        <button
+          className="sidebar-btn"
+          onClick={() => setView("attendance-log")}
+        >
+          📊 Attendance Log
+        </button>
+        <button
+          className="logout-btn"
+          onClick={() => auth.signOut().then(() => navigate("/login"))}
+        >
+          🚪 Log Out
+        </button>
+      </div>
   
-        </div>
-      )}
-
-
-
-
-
-
-
-
+      {/* Main Content Section */}
+      <div className="content">
+        {view === "classlist" && <ClassList />}
+        {view === "excuse-letter" && <ExcuseLetterList />}
+        {view === "attendance-log" && <AttendanceLogs />}
+      </div>
+    </div>
+  )}
+  
 export default Adviser;

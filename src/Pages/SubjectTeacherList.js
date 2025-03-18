@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import "../Styles/sbtlis.css";
 
 const SubjectTeacherList = () => {
   const [teachers, setTeachers] = useState([]);
@@ -55,26 +56,28 @@ const SubjectTeacherList = () => {
   }, []);
 
   return (
+    <div className="SBLISt">
     <div>
-      <h2>Subject Teacher List</h2>
-      <table border="1">
-        <thead>
+      <h2 className="sblist-name">Subject Teacher List</h2>
+      <table className="tb-sblist">
+        <thead className="sblist-head">
           <tr>
-            <th>Name</th>
-            <th>Subject 1</th>
-            <th>Last Login</th>
+            <th className="sblist-h">Name</th>
+            <th className="sblist-h">Subject 1</th>
+            <th className="sblist-h">Last Login</th>
           </tr>
         </thead>
         <tbody>
           {teachers.map((teacher) => (
             <tr key={teacher.id}>
-              <td>{teacher.name}</td>
-              <td>{teacher.subjects[0] || "N/A"}</td>
-              <td>{teacher.lastLogin}</td>
+              <td className="name-d">{teacher.name}</td>
+              <td className="name-d">{teacher.subjects[0] || "N/A"}</td>
+              <td className="name-d">{teacher.lastLogin}</td>
             </tr>
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

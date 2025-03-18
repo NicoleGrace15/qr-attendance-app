@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import jsPDF from "jspdf";
+import "../Styles/excuse.css";
 
 const ExcuseLetterList = () => {
   const [excuseLetters, setExcuseLetters] = useState([]);
@@ -126,8 +127,8 @@ const ExcuseLetterList = () => {
           <tbody>
   {excuseLetters.filter(excuse => !excuse.reviewed).map((excuse) => (
     <tr key={excuse.id}>
-      <td>{excuse.studentName}</td>
-      <td>
+      <td className="excc">{excuse.studentName}</td>
+      <td className="excc">
         {excuse.document ? (
           <img
             src={`data:image/png;base64,${excuse.document}`}
@@ -138,11 +139,11 @@ const ExcuseLetterList = () => {
           "No File"
         )}
       </td>
-      <td>{formatTime(excuse.timestamp)}</td>
-      <td>{formatDate(excuse.timestamp)}</td>
-      <td>
-        <button onClick={() => handlePrint(excuse.document)}>Print</button>
-        <button onClick={() => markAsReviewed(excuse.id)}>Done Review</button>
+      <td className="excc">{formatTime(excuse.timestamp)}</td>
+      <td className="excc">{formatDate(excuse.timestamp)}</td>
+      <td className="excc">
+        <button className="omyyyy" onClick={() => handlePrint(excuse.document)}>Print</button>
+        <button className="omyyyy" onClick={() => markAsReviewed(excuse.id)}>Done Review</button>
       </td>
     </tr>
   ))}
@@ -165,8 +166,8 @@ const ExcuseLetterList = () => {
   {excuseLetters.filter(excuse => excuse.reviewed).length > 0 ? (
     excuseLetters.filter(excuse => excuse.reviewed).map((excuse) => (
       <tr key={excuse.id}>
-        <td>{excuse.studentName}</td>
-        <td>
+        <td className="excc">{excuse.studentName}</td>
+        <td className="excc">
           {excuse.document ? (
             <img
               src={`data:image/png;base64,${excuse.document}`}
@@ -177,8 +178,8 @@ const ExcuseLetterList = () => {
             "No File"
           )}
         </td>
-        <td>{formatDate(excuse.reviewedAt)}</td>
-        <td>{formatTime(excuse.reviewedAt)}</td>
+        <td className="excc">{formatDate(excuse.reviewedAt)}</td>
+        <td className="excc">{formatTime(excuse.reviewedAt)}</td>
       </tr>
     ))
   ) : (

@@ -14,72 +14,99 @@ const SubjectTeachers = () => {
   const [newSubject, setNewSubject] = useState("");
   const auth = getAuth();
   const navigate = useNavigate();
-  const teacherID = auth.currentUser.uid; 
 
+  const [teacherID, setTeacherID] = useState(null);
   useEffect(() => {
-    const fetchStudentsAndAttendance = async () => {
-      try {
-        const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD format
-  
-        // ❗ Reset attendanceRemarks at the start of each day
-        setAttendanceRemarks({}); 
-  
-        const usersCollection = collection(db, "users");
-        const usersSnapshot = await getDocs(usersCollection);
-        const userData = usersSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-  
-        // Fetch subject teacher's assigned subject
-        const teacher = userData.find((user) => user.uid === teacherID);
-        if (teacher) {
-          setSubjectHandled(teacher.subjectHandled);
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        if (user) {
+          setTeacherID(user.uid);  
+          console.log("Teacher ID from auth:", user.uid);  // ✅ Verify teacherID
+        } else {
+          console.error("User not authenticated.");
+          navigate("/login");  
         }
+      });
+    
+      return () => unsubscribe(); 
+    }, [auth, navigate]);
+    
   
-        // Get student list
-        const studentList = userData
-          .filter((user) => user.role === "Student")
-          .map((student) => ({
-            ...student,
-            firstName: student.firstName.toUpperCase(),
-            middleName: student.middleName.toUpperCase(),
-            lastName: student.lastName.toUpperCase(),
-          }))
-          .sort((a, b) => a.studentID.localeCompare(b.studentID));
   
-        setStudents(studentList);
-  
-        // Fetch today's attendance records for the teacher's subject
-        if (teacher?.subjectHandled) {
-          const attendanceCollection = collection(db, "attendance");
-          const q = query(
-            attendanceCollection,
-            where("date", "==", today),
-            where("subject", "==", teacher.subjectHandled)
-          );
-          const attendanceSnapshot = await getDocs(q);
-  
-          // Map attendance data to remarks
+
+    useEffect(() => {
+      const fetchStudentsAndAttendance = async (teacherID) => {
+        try {
+          const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD format
+    
+          setAttendanceRemarks({}); // Reset state each day
+    
+          const usersCollection = collection(db, "users");
+          const usersSnapshot = await getDocs(usersCollection);
+          const userData = usersSnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+    
+          const teacher = userData.find((user) => user.uid === teacherID);
+          if (teacher) {
+            setSubjectHandled(teacher.subjectHandled);
+          }
+    
+          const studentList = userData
+            .filter((user) => user.role === "Student")
+            .map((student) => ({
+              ...student,
+              firstName: student.firstName.toUpperCase(),
+              middleName: student.middleName.toUpperCase(),
+              lastName: student.lastName.toUpperCase(),
+            }))
+            .sort((a, b) => a.studentID.localeCompare(b.studentID));
+    
+          setStudents(studentList);
+    
+          // ✅ Declare `attendanceMap` here before using it
           const attendanceMap = {};
-          attendanceSnapshot.docs.forEach((doc) => {
+    
+          // Fetch attendance records for today
+          if (teacher?.subjectHandled) {
+            const attendanceCollection = collection(db, "attendance");
+            const q = query(
+              attendanceCollection,
+              where("date", "==", today),
+              where("subject", "==", teacher.subjectHandled)
+            );
+            const attendanceSnapshot = await getDocs(q);
+    
+            attendanceSnapshot.docs.forEach((doc) => {
+              const record = doc.data();
+              attendanceMap[record.studentID] = record.status;
+            });
+          }
+    
+          // 🔥 Fetch Excused Students from "record"
+          const recordCollection = collection(db, "record");
+          const recordQuery = query(recordCollection, where("date", "==", today));
+          const recordSnapshot = await getDocs(recordQuery);
+    
+          recordSnapshot.docs.forEach((doc) => {
             const record = doc.data();
-            attendanceMap[record.studentID] = record.status;
+            if (record.excused) {
+              attendanceMap[record.studentID] = "Excused"; // Mark student as excused
+            }
           });
-  
-          // ✅ Ensure this updates only with today's data
-          setAttendanceRemarks(attendanceMap);
+    
+          setAttendanceRemarks(attendanceMap); // ✅ Update state at the end
+    
+        } catch (error) {
+          console.error("Error fetching data:", error);
         }
-      } catch (error) {
-        console.error("Error fetching data:", error);
+      };
+    
+      if (teacherID) {
+        fetchStudentsAndAttendance(teacherID);
       }
-    };
-  
-    if (teacherID) {
-      fetchStudentsAndAttendance();
-    }
-  }, [teacherID]); // ✅ useEffect runs when teacherID changes
-   // ✅ useEffect runs when teacherID changes
+    }, [teacherID]); // Run only when teacherID changes
+    
   
   
   
@@ -153,12 +180,11 @@ const handleEditClick = () => {
   setIsEditing(true);
   setNewSubject(subjectHandled); // Prefill input with the current subject
 };
-  
 
   return (
     <div className="Main-subject-dashboard" > 
     <div className="subject-container">
-      <h2>Subject Teacher Dashboard - {subjectHandled}</h2>
+      <h2 className="h2-dabest">Subject Teacher Dashboard - {subjectHandled}</h2>
 
       {isEditing ? (
         <div>
@@ -176,7 +202,7 @@ const handleEditClick = () => {
      <div>
   <input
     type="text"
-    placeholder="Enter new subject"
+    placeholder="Edit Subject Name"
     value={newSubject}
     onChange={(e) => setNewSubject(e.target.value)}
   />
@@ -201,16 +227,23 @@ const handleEditClick = () => {
               <td>{student.studentID}</td>
               <td>{student.section}</td>
               <td className="remarks-td">
-                <button onClick={() => handleAttendance(student.studentID, `${student.firstName} ${student.lastName}`, student.section, "Present")} className="present-btn">
-                  ✅ Present
-                </button>
-                <button onClick={() => handleAttendance(student.studentID, `${student.firstName} ${student.lastName}`, student.section, "Absent")} className="absent-btn">
-                  ❌ Absent
-                </button>
-                <button onClick={() => handleAttendance(student.studentID, `${student.firstName} ${student.lastName}`, student.section, "Late")} className="late-btn">
-                  ⏳ Late
-                </button>
-              </td>
+  {attendanceRemarks[student.studentID] === "Excused" ? (
+    <span>Excused</span>
+  ) : (
+    <>
+      <button onClick={() => handleAttendance(student.studentID, `${student.firstName} ${student.lastName}`, student.section, "Present")} className="present-btn">
+        ✅ Present
+      </button>
+      <button onClick={() => handleAttendance(student.studentID, `${student.firstName} ${student.lastName}`, student.section, "Absent")} className="absent-btn">
+        ❌ Absent
+      </button>
+      <button onClick={() => handleAttendance(student.studentID, `${student.firstName} ${student.lastName}`, student.section, "Late")} className="late-btn">
+        ⏳ Late
+      </button>
+    </>
+  )}
+</td>
+
               <td>{attendanceRemarks[student.studentID] || "-"}</td>
             </tr>
           ))}

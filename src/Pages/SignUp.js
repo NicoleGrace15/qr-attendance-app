@@ -149,6 +149,7 @@ const [motherLastName, setMotherLastName] = useState("");
   };
 
   return (
+    <div className="Container-head">
     <div className="container-SignUp">
       <h2>Sign Up</h2>
       <input className="input-signup"  type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
@@ -162,11 +163,11 @@ const [motherLastName, setMotherLastName] = useState("");
       <div className="Role-container">
       <h3>Role</h3>
       <select value={role} onChange={(e) => setRole(e.target.value)}>
-        <option value="Student">Student</option>
-        <option value="Adviser">Adviser</option>
-        <option value="Subject Teacher">Subject Teacher</option>
-        <option value="Parent">Parent</option>
-        <option value="Admin">Admin</option>
+        <option className="roless" value="Student">Student</option>
+        <option className="roless"value="Adviser">Adviser</option>
+        <option className="roless"value="Subject Teacher">Subject Teacher</option>
+        <option className="roless"value="Parent">Parent</option>
+        <option className="roless" value="Admin">Admin</option>
       </select>
       </div>
 
@@ -281,6 +282,7 @@ const [motherLastName, setMotherLastName] = useState("");
 
       <button onClick={handleSignUp}>Sign Up</button>
       <button type="button" onClick={handleCancel}>Cancel</button>
+    </div>
     </div>
   );
 }

@@ -386,44 +386,47 @@ const handleUploadExcuse = async () => {
   
 
   return (
-    <div className="Main-content-student-dashboard">
-    <div className="student-dashboard-design">
-      <h2>Welcome, {user?.firstName || "Student"}!</h2>
+    <div className="mainhsvdaygvd">
+      <div className="menucontainerss">
+      <button onClick={() => setMenuOpen(!menuOpen)}>☰ Menu</button>
+      {menuOpen && (
+        <div className="menudada">
+          <button className="menubasvdyg"onClick={() => setEditMode(true)}>Edit Profile</button>
+          <button className="menubasvdyg"onClick={() => setIsChangePasswordOpen(true)}>Change Password</button>
+          <button className="menubasvdyg"onClick={() => setIsExcuseModalOpen(true)}>Upload Excuse Letter</button>
+          <button className="menubasvdyg"onClick={() => setIsAppealOpen(true)}>Submit Appeal</button>
+          <button className="menubasvdyg"onClick={handleLogout}>Log Out</button>
+        </div>
+      )}
+      </div>
+    <div className="oolsbdhba">
+      <h2 className="welcms">Welcome, {user?.firstName || "Student"}!</h2>
 
       
       {editMode && (
   <div className="edit-profile">
-    <h3>Edit Profile</h3>
+    <h3 className="loapans">Edit Profile</h3>
     <label>First Name: <input type="text" value={updatedProfile.firstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, firstName: e.target.value })} /></label>
     <label>Middle Name: <input type="text" value={updatedProfile.middleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, middleName: e.target.value })} /></label>
-    <label>Last Name: <input type="text" value={updatedProfile.lastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, lastName: e.target.value })} /></label>
+    <label>Last Name: <inpuat type="text" value={updatedProfile.lastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, lastName: e.target.value })} /></label>
     <label>Grade Level: <input type="text" value={updatedProfile.gradeLevel} onChange={(e) => setUpdatedProfile({ ...updatedProfile, gradeLevel: e.target.value })} /></label>
     <label>Section: <input type="text" value={updatedProfile.section} onChange={(e) => setUpdatedProfile({ ...updatedProfile, section: e.target.value })} /></label>
-
-
-    <h4>Father's Information</h4>
+    <h4 className="mnsdsa">Father's Information</h4>
     <label>First Name: <input type="text" value={updatedProfile.fatherFirstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherFirstName: e.target.value })} /></label>
     <label>Middle Name: <input type="text" value={updatedProfile.fatherMiddleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherMiddleName: e.target.value })} /></label>
     <label>Last Name: <input type="text" value={updatedProfile.fatherLastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, fatherLastName: e.target.value })} /></label>
-
-    <h4>Mother's Information</h4>
+    <h4 className="mnsdsa">Mother's Information</h4>
     <label>First Name: <input type="text" value={updatedProfile.motherFirstName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherFirstName: e.target.value })} /></label>
     <label>Middle Name: <input type="text" value={updatedProfile.motherMiddleName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherMiddleName: e.target.value })} /></label>
     <label>Last Name: <input type="text" value={updatedProfile.motherLastName} onChange={(e) => setUpdatedProfile({ ...updatedProfile, motherLastName: e.target.value })} /></label>
-
-    
-    <button onClick={handleProfileUpdate}>Save Changes</button>
-    <button onClick={() => setEditMode(false)}>Cancel</button>
-
-   
-
-
+    <button className="asawqzs"onClick={handleProfileUpdate}>Save Changes</button>
+    <button className="asawqzs" onClick={() => setEditMode(false)}>Cancel</button>
   </div>
 )}
 
 {isChangePasswordOpen && (
   <div className="change-password-modal">
-    <h3>Change Password</h3>
+    <h3 className="loapans">Change Password</h3>
     <label>Old Password:</label>
     <input
       type="password"
@@ -445,17 +448,17 @@ const handleUploadExcuse = async () => {
       onChange={(e) => setConfirmPassword(e.target.value)}
     />
 
-    <button onClick={handleChangePassword}>Update Password</button>
-    <button onClick={() => setIsChangePasswordOpen(false)}>Cancel</button>
+    <button className="asawqzs"onClick={handleChangePassword}>Update Password</button>
+    <button className="asawqzs"onClick={() => setIsChangePasswordOpen(false)}>Cancel</button>
   </div>
 
 )}
 
  {/* 🚀 Excuse Letter Upload Modal */}
  {isExcuseModalOpen && (
-        <div className="modal">
-          <h3>Upload Excuse Letter</h3>
-          <input type="file" onChange={handleFileChange} accept=".png" />
+        <div className="qqqq">
+          <h3 className="loapans">Upload Excuse Letter</h3>
+          <input className="dadsacsh"type="file" onChange={handleFileChange} accept=".png" />
           <div className="modal-buttons">
             <button onClick={handleUploadExcuse} disabled={isUploading}>
               {isUploading ? "Uploading..." : "Submit"}
@@ -470,7 +473,7 @@ const handleUploadExcuse = async () => {
 
 {isAppealOpen && (
   <div className="appeal-modal">
-    <h3>Submit Attendance Appeal</h3>
+    <h3 className="loapans">Submit Attendance Appeal</h3>
     <textarea
       rows="4"
       placeholder="Explain why your attendance record is incorrect..."
@@ -484,28 +487,17 @@ const handleUploadExcuse = async () => {
   </div>
 )}
 
-
-      <button onClick={() => setMenuOpen(!menuOpen)}>☰ Menu</button>
-      {menuOpen && (
-        <div className="menu">
-          <button onClick={() => setEditMode(true)}>Edit Profile</button>
-          <button onClick={() => setIsChangePasswordOpen(true)}>Change Password</button>
-          <button onClick={() => setIsExcuseModalOpen(true)}>Upload Excuse Letter</button>
-          <button onClick={() => setIsAppealOpen(true)}>Submit Appeal</button>
-          <button onClick={handleLogout}>Log Out</button>
-
-        </div>
-      )}
+    
       
-      <h3>Schedule</h3>
+      <h3 className="loapans">Schedule</h3>
 
 
 
 {/* Table for TTH */}
 {/* MWF Schedule */}
-<h4>Monday-Wednesday-Friday (MWF)</h4>
-<table border="1">
-  <thead>
+<h4 className="mnsdsa">Monday-Wednesday-Friday (MWF)</h4>
+<table className="losdnan">
+  <thead className="awsadsa">
     <tr>
       <th>Subject</th>
       <th>Time</th>
@@ -517,10 +509,10 @@ const handleUploadExcuse = async () => {
     {getTodayScheduleType() === "MWF" ? (
       schedule.filter(item => item.scheduleType === "MWF").map((item) => (
         <tr key={item.id}>
-          <td>{item.subject}</td>
-          <td>{item.time}</td>
-          <td>{item.teacher}</td>
-          <td>
+          <td className="wqwqwq">{item.subject}</td>
+          <td className="wqwqwq">{item.time}</td>
+          <td className="wqwqwq">{item.teacher}</td>
+          <td className="wqwqwq">
             {attendanceRecords[item.subject] ? (
               <>
                 {attendanceRecords[item.subject]} <br />
@@ -532,16 +524,16 @@ const handleUploadExcuse = async () => {
       ))
     ) : (
       <tr>
-        <td colSpan="4" style={{ textAlign: "center" }}>No MWF classes scheduled today.</td>
+        <td  className="wqwqwq"colSpan="4" style={{ textAlign: "center" }}>No MWF classes scheduled today.</td>
       </tr>
     )}
   </tbody>
 </table>
 
 {/* TTH Schedule */}
-<h4>Tuesday-Thursday (TTH)</h4>
-<table border="1">
-  <thead>
+<h4 className="mnsdsa" cl>Tuesday-Thursday (TTH)</h4>
+<table className="losdnan">
+<thead className="awsadsa">
     <tr>
       <th>Subject</th>
       <th>Time</th>
@@ -553,10 +545,10 @@ const handleUploadExcuse = async () => {
     {getTodayScheduleType() === "T/TH" ? (
       schedule.filter(item => item.scheduleType === "T/TH").map((item) => (
         <tr key={item.id}>
-          <td>{item.subject}</td>
-          <td>{item.time}</td>
-          <td>{item.teacher}</td>
-          <td>
+          <td className="wqwqwq">{item.subject}</td>
+          <td className="wqwqwq">{item.time}</td>
+          <td className="wqwqwq">{item.teacher}</td>
+          <td className="wqwqwq">
             {attendanceRecords[item.subject] ? (
               <>
                 {attendanceRecords[item.subject]} <br />
@@ -568,7 +560,7 @@ const handleUploadExcuse = async () => {
       ))
     ) : (
       <tr>
-        <td colSpan="4" style={{ textAlign: "center" }}>No T/TH classes scheduled today.</td>
+    <td className="wqwqwq"colSpan="4" style={{ textAlign: "center" }}>No T/TH classes scheduled today.</td>
       </tr>
     )}
   </tbody>

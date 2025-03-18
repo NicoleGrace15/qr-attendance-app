@@ -1,69 +1,108 @@
-.appeal-4 {
-    position: absolute; /* Allows precise positioning */
-    top: 2in; /* Moves it 2 inches from the top */
-    left: 50%; /* Centers it horizontally */
-    transform: translateX(-50%); /* Ensures it's centered */
-    max-width: 90%;
-    background: #ffffff;
+/* Base styling for the page */
+.appeal-4sdawd {
+    background-color: #1c2b387f; /* Dark blue background */
+    color: #ffffff; /* White text */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-/* Container for buttons inside the table cell */
-.appeal-buttons {
-    text-align: center; /* Center content */
-    padding: 8px; /* Ensure spacing */
-}
-
-.button-container {
-    display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    gap: 10px; /* Space between buttons */
-    flex-wrap: wrap; /* Ensure buttons stay inside if screen shrinks */
-}
-
-/* Common styles for both buttons */
-.button {
-    min-width: 120px; /* Ensures uniform width */
-    height: 40px; /* Ensures uniform height */
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    max-width: 1200px; /* Limit the maximum width */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    margin-left: 400px;
+  }
+  
+  /* Styling for the header */
+  .h2-appeal {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #66ccff; /* Light blue */
+  }
+  
+  /* Styling for the section headers (Unreviewed & Archived Appeals) */
+  .fafafaqwe {
+    font-size: 20px;
+    margin-top: 30px;
+    color: #66ccff; /* Light blue */
+    border-bottom: 2px solid #66ccff;
+    padding-bottom: 10px;
+  }
+  
+  /* Table container (to allow scroll) */
+  .appeal-table-container {
+    max-height: 500px; /* Set a max height for the table */
+    overflow-y: auto; /* Add vertical scroll */
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-left: 50px;
+  }
+  
+  /* Table styling */
+  .appeal-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .appeal-row {
+    background-color: #2a3d52; /* Darker blue for row background */
+  }
+  
+  .appeal-table th, .appeal-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .appeal-table th {
+    background-color: #33475b; /* Slightly lighter blue for header */
+    color: #ffffff;
+  }
+  
+  .appeal-table td {
+    color: #d3d3d3; /* Light grey text */
+  }
+  
+  /* Styling for empty states */
+  .sjdnakwdb {
+    text-align: center;
+    color: #f0f0f0; /* Slightly off-white */
+    padding: 10px;
+  }
+  
+ /* Styling for the button container */
+.posdkan-container {
+    display: flex; /* Align the buttons in a row */
+    gap: 10px; /* Add space between the buttons */
+    justify-content: center; /* Center the buttons */
+    margin-top: 10px;
+  }
+  
+  /* Individual button styling */
+  .posdkan {
+    background-color: #66ccff; /* Light blue */
+    color: #1c2b38; /* Dark blue text */
     border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px; /* Space between icon and text */
-    transition: all 0.3s ease-in-out;
-}
-
-/* Print button - professional blue */
-.appeal-print {
-    background: #007bff;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
-}
-
-.appeal-print:hover {
-    background: #0056b3;
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
-    transform: translateY(-2px);
-}
-
-/* Done Review button - professional green */
-.appeal-done {
-    background: #28a745;
-    color: white;
-    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3
-    
-    );
-}
-
-.appeal-done:hover {
-    background: #1e7e34;
-    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
-    transform: translateY(-2px);
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .posdkan:hover {
+    background-color: #33aaff; /* Darker blue on hover */
+  }
+  
+  
+  /* Error message styling */
+  .text-red-500 {
+    color: #ff0000; /* Red for errors */
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Loading text styling */
+  .loading-text {
+    text-align: center;
+    font-size: 18px;
+    color: #ffcc00; /* Yellow loading text */
+  }
+  

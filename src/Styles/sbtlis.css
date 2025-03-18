@@ -1,0 +1,55 @@
+/* Main Container */
+.SBLISt {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: rgba(3, 0, 99, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Heading */
+.sblist-name {
+    text-align: center;
+    font-size: 1.8rem;
+    color: rgba(205, 205, 205, 0.9);
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(41, 128, 185, 0.5);
+    padding-bottom: 5px;
+}
+
+/* Table Design */
+.tb-sblist {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sblist-head th {
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 12px 15px;
+    font-weight: bold;
+}
+
+.name-d {
+    padding: 10px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(44, 62, 80, 0.8);
+    text-align: center;
+}
+
+/* Alternate row background for clarity */
+.tb-sblist tbody tr:nth-child(even) {
+    background-color: rgba(236, 240, 241, 0.5);
+}
+
+/* Hover Effect */
+.tb-sblist tbody tr:hover {
+    background-color: rgba(41, 128, 185, 0.1);
+    cursor: pointer;
+}

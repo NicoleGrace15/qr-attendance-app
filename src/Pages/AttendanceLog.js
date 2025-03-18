@@ -3,6 +3,7 @@ import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { format } from "date-fns"; 
 import html2pdf from "html2pdf.js"; // Import html2pdf.js for the table-to-PDF conversion
+import "../Styles/attendancelogs.css";
 
 const AttendanceLogs = () => {
   const [subjects, setSubjects] = useState({ MWF: [], TTH: [] });
@@ -185,13 +186,13 @@ const AttendanceLogs = () => {
  
   return (
     <div className="Attendance-logs-box">
-      <h2>📋 Attendance Log</h2>
+      <h2 className="kdnad">📋 Attendance Log</h2>
       <div className="mwf-attendance-box">
-        <h3>📌 MWF Subjects</h3>
+        <h3 className="djansk">📌 MWF Subjects</h3>
         <ul>
           {subjects.MWF.map((subject, index) => (
             <li key={index}>
-              <button onClick={() => fetchAttendanceForSubject(subject)}>{subject}</button>
+              <button className="subject-button-attendance" onClick={() => fetchAttendanceForSubject(subject)}>{subject}</button>
             </li>
           ))}
         </ul>
@@ -201,7 +202,7 @@ const AttendanceLogs = () => {
         <ul>
           {subjects.TTH.map((subject, index) => (
             <li key={index}>
-              <button onClick={() => fetchAttendanceForSubject(subject)}>{subject}</button>
+              <button className="subject-button-attendance" onClick={() => fetchAttendanceForSubject(subject)}>{subject}</button>
             </li>
           ))}
         </ul>
@@ -209,7 +210,7 @@ const AttendanceLogs = () => {
 
       {showTable && selectedSubject &&(
         <div>
-          <h1>{selectedSubject} Weekly Attendance</h1>
+          <h1 className="kkmanwk">{selectedSubject} Weekly Attendance</h1>
           <table id="attendance-table"  border="1">
             <thead>
               <tr>
@@ -222,10 +223,10 @@ const AttendanceLogs = () => {
             <tbody>
   {attendanceData.length > 0 ? (
     attendanceData.map((record, idx) => (
-      <tr key={idx}>
-        <td>{record.name}</td>
+      <tr className="rared" key={idx}>
+        <td className="lolppsd">{record.name}</td>
         {weekDates.map((date, index) => (
-          <td key={index}>
+          <td className="lolppsd"cl key={index}>
             {record.records[date] ? record.records[date] : "-"} {/* ✅ Ensures proper mapping */}
           </td>
         ))}
@@ -239,8 +240,8 @@ const AttendanceLogs = () => {
 </tbody>
 
           </table>
-          <button onClick={printPDF}>Print PDF</button> {/* PDF Print Button */}
-          <button onClick={handleBack} className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          <button className="hasvsdhawvd"onClick={printPDF}>Download</button> {/* PDF Print Button */}
+          <button  className="hasvsdhawvd" onClick={handleBack}>
       Back
     </button>
         </div>

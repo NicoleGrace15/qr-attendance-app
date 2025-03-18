@@ -42,12 +42,13 @@ const Dashboard = () => {
     return () => unsubscribe(); // Cleanup listener on unmount
   }, [navigate]);
   return (
-    <div className="flex h-screen">
+    <div className="MAIN-ROOT">
+        
       {userRole === "Admin" ? (
         <>
           {/* Sidebar */}
           <div className="w-1/5 bg-blue-900 text-white p-4 min-h-screen">
-            <h2 className="text-lg font-bold mb-4">Welcome, Admin!</h2>
+          
             <div className="sidebar">
             <button className="w-full bg-white text-blue-900 font-bold p-2 my-1 rounded" onClick={() => setView("schedule")}>
               📅 Add Schedule
@@ -80,6 +81,7 @@ const Dashboard = () => {
 
           {/* Main Content */}
           <div className="content-adminstyle">
+          <h2 className="admin-title">Welcome, Admin!</h2>
             {view === "schedule" && <Schedule />}
             {view === "classlist" && <ClassList />}
             {view === "excuse" && <ExcuseLetter />}

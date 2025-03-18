@@ -1,80 +1,88 @@
 /* Main Subject Container */
-.Main-subject-dashboard{
-  margin-top: 2500px;
-  
+.Main-subject-dashboard {
+  margin-top: 20px;
+  background-color: #ffffff00;
+  color: #d6e2f0;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 100%; /* Ensures responsiveness */
+  overflow-x: auto; /* Enables horizontal scrolling */
+
 }
+
+/* Subject Container */
 .subject-container {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background: #1e2a38; /* Muted Dark Blue */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background: #40629859;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   text-align: center;
-  margin-top: 50px;
-  color: #d6e2f0; /* Soft Blue-Gray Text */
-  position: relative;
-  top: 0;
+  overflow: auto; /* Critical: Enables both horizontal and vertical scroll */
+  max-height: 900px; /* Limits height and triggers vertical scroll if needed */
+}
+
+/* Scrollbar Design */
+.subject-container::-webkit-scrollbar {
+  width: 12px; /* Vertical scrollbar width */
+  height: 12px; /* Horizontal scrollbar height */
+}
+
+.subject-container::-webkit-scrollbar-track {
+  background: #3A4D6B;
+  border-radius: 8px;
+}
+
+.subject-container::-webkit-scrollbar-thumb {
+  background-color: #1E2A38;
+  border-radius: 8px;
+  border: 2px solid #3A4D6B;
+}
+
+.subject-container::-webkit-scrollbar-thumb:hover {
+  background-color: #4A6980;
 }
 
 /* Header Styling */
-h2 {
-  font-size: 22px;
-  color: #c5d1e0; /* Soft Blue */
+.h2-dabest {
+  font-size: 26px;
+  color: #f0f4f8;
   font-weight: bold;
   margin-bottom: 15px;
-}
-
-/* Input Fields */
-input[type="text"] {
-  padding: 8px;
-  width: 60%;
-  border-radius: 5px;
-  border: 1px solid #6c7a89; /* Subtle Border */
-  margin: 10px 0;
-  background: #2b3b4f; /* Muted Dark Blue */
-  color: #d6e2f0;
-  text-align: center;
-}
-
-/* Table Styling */
-.sbteacher-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background: #e3eaf3; /* Soft Blue-Gray */
+  background-color: #1E2A38;
+  padding: 10px;
   border-radius: 8px;
-  overflow: hidden;
 }
 
 .sbteacher-table th {
-  background: #304156; /* Dark Muted Blue */
+  background: #304156;
   color: white;
   padding: 12px;
 }
 
 .sbteacher-table td {
   padding: 10px;
-  border-bottom: 1px solid #b0bec5; /* Light Gray Border */
+  border-bottom: 1px solid #b0bec5;
   color: #2a2e32;
   background: #f5f7fa;
 }
 
-/* Remarks Buttons (Position Unchanged) */
+/* Attendance Buttons (Now Horizontal) */
 .remarks-td {
   display: flex;
   gap: 8px;
-  justify-content: center;
+  justify-content: center; /* Horizontal alignment */
+  flex-wrap: nowrap; /* Prevents wrapping */
 }
 
-/* Attendance Buttons */
 .present-btn,
 .absent-btn,
 .late-btn {
-  width: 85%; /* Adjust width to 85% of the original */
-  padding: 8px 16px; /* Adjust padding for uniform size */
-  font-size: 14px; /* Adjust font size to keep proportions */
-  border-radius: 6px; /* Optional: keeps button shape consistent */
+  width: auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
   border: none;
   color: white;
   text-align: center;
@@ -83,33 +91,31 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-/* Individual button colors */
 .present-btn {
-  background: #4a6980; /* Muted Teal-Blue */
+  background: #4a6980;
 }
 
 .absent-btn {
-  background: #6b798e; /* Soft Desaturated Blue */
+  background: #6b798e;
 }
 
 .late-btn {
-  background: #7c8ea5; /* Grayish Blue */
+  background: #7c8ea5;
 }
-
 
 /* Edit and Logout Buttons */
 .edit-btn {
-  background: #566b87; /* Muted Blue */
+  background: #566b87;
   color: white;
 }
 
 .logout-btn {
-  background: #3e526a; /* Deep Blue */
+  background: #3e526a;
   color: white;
   margin-top: 15px;
 }
 
-/* Button Styling */
+/* Button Hover Effect */
 button {
   cursor: pointer;
   padding: 8px 16px;
@@ -131,11 +137,11 @@ button:hover {
   }
 
   .remarks-td {
-    flex-direction: row; /* Keeps buttons horizontal */
+    flex-direction: row; /* Ensures buttons stay horizontal */
     gap: 5px;
   }
 
   button {
-    width: auto;
+    width: auto; /* Flexible button width */
   }
 }

@@ -5,12 +5,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.074);
 }
 
 /* Login box */
 .container-login form {
-  background-color: white;
+  background-color: rgba(34, 37, 60, 0.293);
   padding: 20px;
   width: 360px;
   border-radius: 8px;
@@ -19,11 +19,19 @@
 }
 
 /* Title */
-h2 {
-  font-size: 24px;
-  color: #1877f2;
+.loginhtow {
+  font-size: 3rem;  /* Increase size for emphasis */
+  font-weight: 800;  /* Extra bold for clarity */
+  font-family: 'Poppins', sans-serif;  /* Clean font */
+  color: #94bfe6;  /* Matches your theme */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);  /* Stronger shadow for visibility */
   margin-bottom: 20px;
+  text-align: center;  /* Center alignment */
+  width: 100%;  /* Ensures it spans the entire sidebar width */
+  overflow: visible;  /* Prevents text from being cut */
+  word-wrap: break-word;  /* Ensures text breaks if too long */
 }
+
 
 /* Input fields */
 .input-login-1 {
@@ -43,7 +51,7 @@ h2 {
 
 /* Buttons */
 .button-login {
-  width: 80%;
+  width: 89%;
   padding: 12px;
   margin-top: 10px;
   font-size: 16px;

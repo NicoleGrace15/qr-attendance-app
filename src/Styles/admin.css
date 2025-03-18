@@ -1,152 +1,165 @@
-.AddSchedule {
-    max-width: 1100px;
-    margin: 20px auto;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 1800px;
-  }
-  
-  .addsubject h2 {
-    text-align: center;
-    color: #2c3e50;
-  }
-  
-  .bg-gray-100 {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  .input-type-design {
-    width: 100%; /* Adjust width as needed */
-    max-width: 400px; /* Prevents it from becoming too wide */
-    padding: 12px;
-    border: 2px solid #2563eb; /* Blue border */
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-    background-color: #f8fafc; /* Light gray background */
-    color: #1e293b; /* Dark text */
+.MAIN-ROOT {
+  display: flex;  /* Maintains layout structure */
+  height: 100vh;  /* Ensures it covers the full viewport height */
+  width: 100%;    /* Ensures it spans the full width */
+  overflow: hidden; /* Prevents unwanted scrolling on the body itself */
 }
-.Input-schedule {
-  
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically (optional) */
-   /* Makes the container full height (optional) */
-}
-  .input-type-design::placeholder {
-    color: #64748b; /* Soft gray placeholder */
-  }
-  
-  .input-type-design:focus {
-    border-color: #1e40af; /* Darker blue on focus */
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.4); /* Glow effect */
-  }
-  
-  input:focus, select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5);
-  }
-  
-  button.add {
-    background: #3498db;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button.add:hover {
-    background: #2980b9;
-  }
-  
-  button.cancel {
-    background: #2980b9;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button.cancel:hover {
-    background: #2980b9;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
 
-  th {
-    background: #2c3e50;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background: #f2f2f2;
-  }
-  
-  tr:hover {
-    background: #ecf0f1;
-  }
-  
-  button.edit-btn {
-    background: #2980b9;;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  button.delete-btn {
-    background: #a8cae1;;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .content {
-    display: flex;
-    justify-content: center; /* Centers the divs horizontally */
-    align-items: flex-start; /* Aligns them to the top */
-    gap: 20px; /* Space between divs */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    padding-top: 20px; /* Adds space from the top */
-  }
-  /* Main Content Container */
 .content-adminstyle {
-  display: flex;
-  flex-direction: column;  /* Stack the components vertically */
-  justify-content: flex-start;  /* Align content to the top */
-  align-items: stretch;  /* Stretch to take up the full width */
-  gap: 20px;  /* Add space between components */
-  width: 100%;
-  height: auto;  /* Allow height to adjust based on content */
-  padding-top: 20px;
-  overflow-y: auto;  /* Allow vertical scrolling if the content is too large */
+  flex-grow: 1;  
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 20px;
+  border-left: 3px solid rgba(13, 71, 161, 0.5); 
+  min-height: 100vh;  /* Extends the content to match the viewport */
+  overflow-y: auto;   /* Enables vertical scrolling if content exceeds */
+  box-sizing: border-box; /* Prevents content from being squeezed */
 }
 
-  
+/* Add Schedule Section */
+.AddSchedule {
+  max-width: 1100px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.441);  /* Transparent white */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Subject Header */
+.addsubject h2 {
+  text-align: center;
+  color: rgba(44, 62, 80, 0.9); 
+}
+
+/* Gray Background with Transparency */
+.bg-gray-100 {
+  background: rgba(248, 249, 250, 0.8); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: rgba(248, 250, 252, 0.7); /* Transparent input */
+  color:#102A43;
+}
+
+.input-type-design::placeholder {
+  color: #64748b;
+}
+
+/* Focus Effect */
+.input-type-design:focus,
+input:focus, select:focus {
+  border-color: #1e40af;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+/* Buttons */
+button.add,
+button.cancel {
+  background: rgba(52, 152, 219, 0.9); 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.add:hover,
+button.cancel:hover {
+  background: rgba(41, 128, 185, 0.9);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.85);  /* Transparent table */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: rgba(44, 62, 80, 0.9); /* Transparent dark */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: rgba(242, 242, 242, 0.8); /* Soft transparent row */
+}
+
+tr:hover {
+  background: rgba(236, 240, 241, 0.8);
+}
+
+/* Edit & Delete Buttons */
+button.edit-btn {
+  background: rgba(41, 128, 185, 0.9);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+button.delete-btn {
+  background: rgba(168, 202, 225, 0.9);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Content Layout */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 350px; /* Adjust width as needed */
+  height: 100vh; /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* ✅ Transparent dark effect */
+  color: rgba(255, 255, 255, 0.8); /* Slight transparency for text */
+  padding: 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5); /* Adds depth */
+  backdrop-filter: blur(8px); /* ✅ Smooth glass effect */
+}
+
+.sidebar a {
+  display: block;
+  color: rgba(255, 255, 255, 0.9); /* Enhanced visibility */
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.admin-title {
+  font-size: 3rem;  /* Increase size for emphasis */
+  font-weight: 800;  /* Extra bold for clarity */
+  font-family: 'Poppins', sans-serif;  /* Clean font */
+  color: #4facfe;  /* Matches your theme */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);  /* Stronger shadow for visibility */
+  margin-bottom: 20px;
+  text-align: center;  /* Center alignment */
+  width: 100%;  /* Ensures it spans the entire sidebar width */
+  overflow: visible;  /* Prevents text from being cut */
+  word-wrap: break-word;  /* Ensures text breaks if too long */
+}
+

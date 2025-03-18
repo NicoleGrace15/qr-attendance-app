@@ -52,7 +52,7 @@ if (userData.role === "Admin") {
 
   return (
     <div className="container-login">
-      <h2>Login</h2>
+      <h2 className="loginhtow">Log in</h2>
       <form onSubmit={handleLogin}>
         <input className="input-login-1" type="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required/>
         <input className="input-login-1" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />

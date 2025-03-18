@@ -1,76 +1,113 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Signup Container */
+.Container-head {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    overflow-y: auto; /* Enable scrollbar for large content */
+    padding: 20px;
 }
-
-/* Form Container */
-.form-container {
-    background:#4facfe;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-}
-
-/* Form Title */
-.form-container h2 {
+.Role-container {
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
+    margin-top: 1rem;
+}
+/* Role Options Styling */
+.role {
+    color: #ffffff; /* White text for better visibility */
+    background-color: transparent; /* Keep background clean */
+    text-shadow: 1px 1px 3px #1e3a8a; /* Dark blue outline */
+    padding: 5px 10px; /* Improved spacing for readability */
+}
+
+select {
+    border: 2px solid #1e3a8a; /* Dark blue border for consistency */
+    background-color: rgba(0, 0, 0, 0.5); /* Slight transparency for contrast */
+    color: #ffffff; /* Ensures text is visible */
+    border-radius: 8px;
+    padding: 8px;
+    outline: none;
+}
+
+
+.Role-container h3 {
+    color: #ffffff; /* Ensures text is visible on the background */
+    text-shadow: 2px 2px 4px #1e3a8a; /* Dark blue outline for emphasis */
+}
+
+/* Main Signup Box */
+.container-SignUp {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker container with transparency */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border for contrast */
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* Strong shadow for depth */
+    max-width: 500px;
+    width: 100%;
+    color: #ffffff; /* Text color for clarity */
+    backdrop-filter: blur(5px); /* Glass effect for elegance */
+}
+
+/* Title & Section Headers */
+.container-SignUp h2, .container-SignUp h3, .container-SignUp h4 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhanced contrast */
 }
 
 /* Input Fields */
-.input-group {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-    color: #555;
-}
-
-input {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
+.input-signup, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent inputs */
+    color: #ffffff;
     border-radius: 8px;
+    margin-bottom: 12px;
     outline: none;
-    transition: border 0.3s;
+    transition: all 0.3s ease;
 }
 
-input:focus {
-    border-color: #4facfe;
+.input-signup:focus, select:focus {
+    border-color: #4facfe; /* Highlight effect */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Button */
+/* Parent Info Container */
+.studentparentinfo, .studentinfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background-color: rgba(0, 0, 0, 0.5); /* Contrast for background */
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Button Styling */
 button {
     width: 100%;
-    padding: 0.8rem;
-    background: #4facfe;
-    border: none;
+    padding: 10px;
     border-radius: 8px;
-    color: white;
-    font-size: 1rem;
+    border: none;
+    background-color: #4facfe;
+    color: #ffffff;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background: #00c2fe;
+    background-color: #00c2fe;
+    transform: translateY(-2px); /* Slight lift */
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-    .form-container {
-        padding: 1.5rem;
-    }
+/* Cancel Button */
+button[type="button"] {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent cancel button */
+    color: #ffffff;
+    border: 2px solid #4facfe;
+}
+
+button[type="button"]:hover {
+    background-color: #4facfe;
 }

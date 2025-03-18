@@ -240,10 +240,10 @@ const AttendanceLogs = () => {
 </tbody>
 
           </table>
+          <div className="qwello">
           <button className="hasvsdhawvd"onClick={printPDF}>Download</button> {/* PDF Print Button */}
-          <button  className="hasvsdhawvd" onClick={handleBack}>
-      Back
-    </button>
+          <button  className="hasvsdhawvd" onClick={handleBack}>Back</button>
+          </div>
         </div>
       )}
     </div>

@@ -3,16 +3,17 @@
   height: 100vh;  /* Ensures it covers the full viewport height */
   width: 100%;    /* Ensures it spans the full width */
   overflow: hidden; /* Prevents unwanted scrolling on the body itself */
+  margin: 0 auto;
 }
 
+
 .content-adminstyle {
-  flex-grow: 1;  
-  background: rgba(255, 255, 255, 0.1); 
-  padding: 20px;
-  border-left: 3px solid rgba(13, 71, 161, 0.5); 
-  min-height: 100vh;  /* Extends the content to match the viewport */
+  display: flex;
+  flex-direction: column; /* Stack elements */
+  align-items: center; /* Centers content horizontally */
+  justify-content: flex-start; /* Aligns content at the top */
+  width: 100%;
   overflow-y: auto;   /* Enables vertical scrolling if content exceeds */
-  box-sizing: border-box; /* Prevents content from being squeezed */
 }
 
 /* Add Schedule Section */

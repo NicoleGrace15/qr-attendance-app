@@ -162,3 +162,9 @@ button:hover {
   background-color: #01579b; /* Darker Blue on hover */
 }
 
+.qwello {
+  display: flex;
+  justify-content: center; /* Centers them horizontally */
+  gap: 10px; /* Adds space between buttons */
+}
+
